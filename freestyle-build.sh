@@ -1,1 +1,2 @@
-npm --version
+# npm --version
+# docker --version
