@@ -9,6 +9,11 @@ pipeline {
         booleanParam(name: 'executeTests', defaultValue: true, description: '')
     }
     stages {
+         stage("Checkout") {
+            steps {
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-repo', url: 'https://github.com//Jenkins_jobs']])
+            }
+        }
         stage("init") {
             steps {
                 script {
